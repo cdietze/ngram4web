@@ -4,6 +4,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface NGramServiceAsync {
 
-	void test(String text, AsyncCallback<String> callback);
+	void generateWords(String[] samples, AsyncCallback<String[]> callback);
 
 }

@@ -6,13 +6,13 @@
 <web-app>
 
 	<servlet>
-		<servlet-name>myServlet</servlet-name>
-		<servlet-class>ngram4web.server.MyServlet</servlet-class>
+		<servlet-name>NGramServlet</servlet-name>
+		<servlet-class>ngram4web.server.NGramServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>myServlet</servlet-name>
+		<servlet-name>NGramServlet</servlet-name>
 		<url-pattern>/ngram4web/service</url-pattern>
 	</servlet-mapping>
 

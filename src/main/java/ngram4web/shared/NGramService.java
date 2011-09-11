@@ -6,5 +6,5 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("service")
 public interface NGramService extends RemoteService {
 
-	public String test(String text);
+	public String[] generateWords(String[] samples);
 }
