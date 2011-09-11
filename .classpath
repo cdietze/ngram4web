@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output=".target/scala-2.9.1/classes" path="src/main/scala"/>
+	<classpathentry kind="src" output=".target/scala-2.9.1/classes" path="src/main/java"/>
+	<classpathentry kind="src" output=".target/scala-2.9.1/classes" path="src/main/resources"/>
+	<classpathentry kind="src" output=".target/scala-2.9.1/test-classes" path="src/test/scala"/>
+	<classpathentry kind="src" output=".target/scala-2.9.1/test-classes" path="src/test/java"/>
+	<classpathentry kind="src" output=".target/scala-2.9.1/test-classes" path="src/test/resources"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.gwt/gwt-servlet/jars/gwt-servlet-2.3.0.jar" sourcepath="C:/Users/christoph/.ivy2/cache/com.google.gwt/gwt-servlet/srcs/gwt-servlet-2.3.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.appengine/appengine-api-1.0-sdk/jars/appengine-api-1.0-sdk-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.appengine/appengine-testing/jars/appengine-testing-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.appengine/appengine-api-stubs/jars/appengine-api-stubs-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.appengine/appengine-api-labs/jars/appengine-api-labs-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.gwt/gwt-user/jars/gwt-user-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/com.google.gwt/gwt-dev/jars/gwt-dev-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/christoph/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="target/webapp/WEB-INF/classes"/>
+</classpath>

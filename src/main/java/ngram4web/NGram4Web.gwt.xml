@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='ngram4web'>
+
+	<inherits name='com.google.gwt.user.User' />
+
+	<entry-point class='ngram4web.client.MyEntryPoint' />
+
+	<!-- see also http://code.google.com/p/gwt-log/wiki/GettingStarted -->
+	<!-- 
+	<inherits name="com.allen_sauer.gwt.log.gwt-log-OFF" />
+	To turn logging on uncomment below -->
+	<!-- inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" /> <set-property 
+		name="log_DivLogger" value="DISABLED" /> <set-property name="log_SystemLogger" 
+		value="DISABLED" / -->
+
+	<set-configuration-property name="UiBinder.useSafeHtmlTemplates"
+		value="true" />
+
+	<source path='client' />
+	<source path='shared' />
+
+</module>
