@@ -9,26 +9,7 @@ class NGramGenerator(samples: Seq[String]) {
   val probTableSize = 100
   val random = new scala.util.Random()
 
-  println("Welcome to the n-gram word generator!")
-  /*
-  val female1890sNames = List("Anna", "Frieda", "Frida", "Martha", "Marta", "Erna", "Emma", "Marie", "Gertrud",
-      "Margarethe", "Margarete", "Maria", "Elisabeth", "Berta", "Bertha", "Elsa", "Helene", "Luise", "Louise", "Johanna", "Hedwig",
-      "Klara", "Clara", "Minna", "Else", "Paula", "Ella", "Ida", "Auguste", "Olga", "Wilhelmine", "Dora", "Alma", "Käthe", "Käte", "Herta",
-      "Hertha", "Elise", "Margaretha", "Margareta", "Meta", "Metha", "Charlotte", "Katharina", "Catharina", "Katarina", "Agnes",
-      "Emilie", "Dorothea", "Anni", "Anny", "Emmi", "Emmy", "Alice", "Elli", "Elly", "Gretchen", "Matilde", "Mathilde", "Caroline",
-      "Karoline", "Henriette", "Henny", "Henni", "Lina", "Elfriede", "Sophie", "Sofie", "Alwine", "Grete", "Grethe", "Amanda", "Rosa",
-      "Franziska", "Hermine", "Christine", "Magdalene", "Lucy", "Lucie", "Antonie", "Johanne", "Hildegard", "Lilly", "Lilli", "Lily",
-      "Irma", "Adele", "Anita", "Anne", "Pauline", "Magdalena", "Marianne", "Friederike") */
-  //val female1890sNames = List("AäBüCßD")
-val dict = buildDictionary(samples)
-
-  /*
-  def main(args: Array[String]) {
-    //println("dict: " + dict)
-    val firstLetter = nextChar("")
-    val words: Seq[String] = (0 until 20).map(_ => genWord)
-    println("Names: " + words.mkString(", "))
-  } */
+  val dict = buildDictionary(samples)
 
   def nextChar(s: String) = dict(s)(random.nextInt(probTableSize))
 
