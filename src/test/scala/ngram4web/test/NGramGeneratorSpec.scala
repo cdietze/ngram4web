@@ -25,5 +25,11 @@ object NGramGeneratorSpec extends Specification with ScalaCheck {
         }
       }
     }
+
+    "run samples" in {
+      val gen = new NGramGenerator(ngram4web.client.Constants.samples.split(",").map(_.trim))
+      println("Samples: " + (0 until 50).map(_ => gen.genWord()))
+      success
+    }
   }
 }
