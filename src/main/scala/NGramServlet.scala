@@ -16,7 +16,7 @@ class NGramServlet extends RemoteServiceServlet with NGramService {
 
     val gen = new NGramGenerator(samples)
     
-    val words = (0 until 10).map(_ => gen.genWord())
+    val words = (0 until 50).map(_ => gen.genWord())
 
     // List("a", "b", "c", "d").toArray
     log.info("result: "+words)

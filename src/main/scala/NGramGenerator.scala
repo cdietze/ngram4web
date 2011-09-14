@@ -6,15 +6,21 @@ class NGramGenerator(samples: Seq[String]) {
 
   type ProbTable = Map[String, Seq[Char]]
 
-  val probTableSize = 100
+  val maxNGramLength = 3
   val random = new scala.util.Random()
 
   val dict = buildDictionary(samples)
-  
+
   def nextChar(s: String): Option[Char] = {
-    val word = dict.getOrElse(s.takeRight(1), return None)
-    var counter = random.nextInt(word._1)
-    Some(word._2.find(e => { counter -= e._2; counter < 0 }).getOrElse(return None)._1)
+    val maxPrefixLen = maxNGramLength - 1
+    //    val maxPrefixLen = random.nextInt(maxNGramLength - 1) + 1
+    (maxPrefixLen to 1 by -1).flatMap(n => dict.get(s.takeRight(n))).headOption match {
+      case None => return None
+      case Some(word) => {
+        var counter = random.nextInt(word._1)
+        Some(word._2.find(e => { counter -= e._2; counter < 0 }).getOrElse(return None)._1)
+      }
+    }
   }
 
   def genWord(): String = {
@@ -28,18 +34,14 @@ class NGramGenerator(samples: Seq[String]) {
     impl("")
   }
 
-  def buildDictionary(words: Seq[String]) = {
-    val nGrams = buildNGrams(words, 2)
+  def buildDictionary(sourceWords: Seq[String]) = {
+    val nGrams = (2 to maxNGramLength).flatMap(buildNGrams(sourceWords, _)) ++ sourceWords.flatMap(_.firstOption).map(_.toString)
     //println("n-grams: " + nGrams)
     buildDictFromNGrams(nGrams)
   }
 
   private def buildNGrams(words: Seq[String], ngramSize: Int): Seq[String] = {
-    for (w <- words; i <- -1 until w.length) yield i match {
-      case -1 => w.last.toString + "$"
-      case 0 => w.first.toString
-      case _ => w(i - 1).toString + w(i)
-    }
+    words.flatMap(w => (w + "$").sliding(ngramSize))
   }
 
   def buildDictFromNGrams(ngrams: Seq[String]) = {

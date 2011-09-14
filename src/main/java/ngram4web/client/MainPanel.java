@@ -12,15 +12,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MainPanel extends Composite implements HasText {
+public class MainPanel extends Composite {
 
 	private static NGramServiceAsync service = GWT.create(NGramService.class);
 
@@ -71,7 +69,7 @@ public class MainPanel extends Composite implements HasText {
 	}
 
 	private String[] toArray(String input) {
-		List<String> tmpList = Arrays.asList(input.split(","));
+		List<String> tmpList = Arrays.asList(input.split("[,.\\s]"));
 		List<String> resultList = new ArrayList<String>();
 		for (String s : tmpList) {
 			String s2 = s.trim();
@@ -80,14 +78,6 @@ public class MainPanel extends Composite implements HasText {
 			}
 		}
 		return resultList.toArray(new String[] {});
-	}
-
-	public void setText(String text) {
-		button.setText(text);
-	}
-
-	public String getText() {
-		return button.getText();
 	}
 
 }
